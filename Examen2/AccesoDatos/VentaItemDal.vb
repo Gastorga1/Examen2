@@ -5,8 +5,8 @@ Public Class VentaItemDAL
         Try
             Dim query As String = "INSERT INTO ventasitems (IDVenta, IDProducto, PrecioUnitario, Cantidad, PrecioTotal) VALUES (@idventa, @idproducto, @preciounitario, @cantidad, @preciototal)"
             Dim parametros() As SqlParameter = {
-                New SqlParameter("@idventa", item.IDVenta),
-                New SqlParameter("@idproducto", item.IDProducto),
+                New SqlParameter("@idventa", item.IdVenta),
+                New SqlParameter("@idproducto", item.IdProducto),
                 New SqlParameter("@preciounitario", item.PrecioUnitario),
                 New SqlParameter("@cantidad", item.Cantidad),
                 New SqlParameter("@preciototal", item.PrecioTotal)

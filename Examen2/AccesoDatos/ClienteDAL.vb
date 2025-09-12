@@ -5,7 +5,7 @@ Public Class ClienteDAL
         Try
             Dim query As String = "INSERT INTO clientes (Cliente, Telefono, Correo) VALUES (@cliente, @telefono, @correo)"
             Dim parametros() As SqlParameter = {
-                New SqlParameter("@cliente", cliente.NombreCliente),
+                New SqlParameter("@cliente", cliente.Nombre),
                 New SqlParameter("@telefono", cliente.Telefono),
                 New SqlParameter("@correo", cliente.Correo)
             }
@@ -19,7 +19,7 @@ Public Class ClienteDAL
         Try
             Dim query As String = "UPDATE clientes SET Cliente=@cliente, Telefono=@telefono, Correo=@correo WHERE ID=@id"
             Dim parametros() As SqlParameter = {
-                New SqlParameter("@cliente", cliente.NombreCliente),
+                New SqlParameter("@cliente", cliente.Nombre),
                 New SqlParameter("@telefono", cliente.Telefono),
                 New SqlParameter("@correo", cliente.Correo),
                 New SqlParameter("@id", cliente.ID)
