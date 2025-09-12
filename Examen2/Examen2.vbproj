@@ -69,11 +69,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccesoDatos\VentaItemDal.vb" />
-    <Compile Include="AccesoDatos\ClienteDAL.vb" />
     <Compile Include="AccesoDatos\ConexionBD.vb" />
-    <Compile Include="AccesoDatos\ProductoDAL.vb" />
-    <Compile Include="AccesoDatos\VentasDal.vb" />
     <Compile Include="Impl\ClienteImpl.vb" />
     <Compile Include="Impl\ProductoImpl.vb" />
     <Compile Include="Impl\VentaImpl.vb" />
