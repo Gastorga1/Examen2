@@ -74,6 +74,14 @@
     <Compile Include="AccesoDatos\ConexionBD.vb" />
     <Compile Include="AccesoDatos\ProductoDAL.vb" />
     <Compile Include="AccesoDatos\VentasDal.vb" />
+    <Compile Include="Impl\ClienteImpl.vb" />
+    <Compile Include="Impl\ProductoImpl.vb" />
+    <Compile Include="Impl\VentaImpl.vb" />
+    <Compile Include="Impl\VentaItemImpl.vb" />
+    <Compile Include="Interfaces\ICliente.vb" />
+    <Compile Include="Interfaces\IProducto.vb" />
+    <Compile Include="Interfaces\IVenta.vb" />
+    <Compile Include="Interfaces\IVentaItem.vb" />
     <Compile Include="Models\Cliente.vb" />
     <Compile Include="Models\Producto.vb" />
     <Compile Include="Models\venta.vb" />
