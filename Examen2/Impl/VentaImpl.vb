@@ -52,4 +52,33 @@ Public Class VentaImpl
             Return New List(Of venta)()
         End Try
     End Function
+
+    Public Function GeneraReporteVentas(venta As venta, cliente As Cliente) As Object Implements IVenta.GeneraReporteVentas
+        Try
+            Dim reporte As String = "----- REPORTE DE VENTA -----" & Environment.NewLine
+            reporte &= $"ID Venta: {venta.id}" & Environment.NewLine
+            reporte &= $"Cliente: {cliente.Nombre} (ID: {cliente.ID})" & Environment.NewLine
+            reporte &= $"Fecha: {venta.fecha}" & Environment.NewLine
+            reporte &= $"Total: ${venta.total}" & Environment.NewLine
+            reporte &= "---------------------------"
+            Return reporte
+        Catch ex As Exception
+            Return "Error generando reporte."
+        End Try
+    End Function
+    Public Function CalcularTotalVentasMensuales() As Dictionary(Of String, Decimal)
+        Dim totalesMensuales As New Dictionary(Of String, Decimal)()
+        Try
+            Dim query As String = "SELECT FORMAT(Fecha, 'yyyy-MM') AS Mes, SUM(Total) AS TotalVentas FROM ventas GROUP BY FORMAT(Fecha, 'yyyy-MM') ORDER BY Mes"
+            Dim dt As DataTable = ConexionBD.EjecutarConsulta(query, Nothing)
+            For Each row As DataRow In dt.Rows
+                Dim mes As String = row("Mes").ToString()
+                Dim total As Decimal = Convert.ToDecimal(row("TotalVentas"))
+                totalesMensuales(mes) = total
+            Next
+        Catch ex As Exception
+            ' Manejo de errores si es necesario
+        End Try
+        Return totalesMensuales
+    End Function
 End Class
